@@ -1,14 +1,10 @@
 <?php
-
-require_once __DIR__ . "/Models/Production.php";
-require_once __DIR__ . "/Models/Genre.php";
+require_once __DIR__ . "/Models/Production.php"; //import class
+require_once __DIR__ . "/Models/Genre.php"; //import class
 
 $Prod1 = new Production("First prod", "English", 1, new Genre("First name", "First description")); //you can also save the new Genre inside another variable
 $Prod2Genre = new Genre("Second name", "Second description");
 $Prod2 = new Production("Second prod", "English", 2, $Prod2Genre);
-
-//var_dump($Prod1);
-
 ?>
 
 <!doctype html>
@@ -41,7 +37,7 @@ $Prod2 = new Production("Second prod", "English", 2, $Prod2Genre);
     <div id='app'>
         <div class="container">
             <ul class="list-group list-group-numbered">
-                <h3>Production</h3> <!-- No way to put a class-name here without write directly ? (ex. < ?php echo Production ? >) -->
+                <h3>Production 1</h3> <!-- No way to put a class-name here without write directly ? (ex. < ?php echo Production (?) >) -->
                 <li class="list-group-item"><?php echo $Prod1->title ?></li>
                 <li class="list-group-item"><?php echo $Prod1->language ?></li>
                 <li class="list-group-item">Vote: <?php echo $Prod1->vote ?></li>
@@ -51,7 +47,7 @@ $Prod2 = new Production("Second prod", "English", 2, $Prod2Genre);
         </div>
         <div class="container">
             <ul class="list-group list-group-numbered">
-                <h3>Production</h3> <!-- No way to put a class-name here without write directly ? (ex. < ?php echo Production ? >) -->
+                <h3>Production 2</h3> <!-- No way to put a class-name here without write directly ? (ex. < ?php echo Production (?) >) -->
                 <li class="list-group-item"><?php echo $Prod2->title ?></li>
                 <li class="list-group-item"><?php echo $Prod2->language ?></li>
                 <li class="list-group-item">Vote: <?php echo $Prod2->vote ?></li>
