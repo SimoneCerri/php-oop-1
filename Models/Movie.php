@@ -12,4 +12,9 @@ class Movie extends Production
     {
         parent::__construct($title, $language,$vote, $genre);//!IMPORTANT with new syntax too
     }
+
+    public function getDuration()
+    {
+        return $this->duration;
+    }
 }

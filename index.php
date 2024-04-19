@@ -6,6 +6,8 @@ require_once __DIR__ . "/Models/TVShow.php"; //import class
 require __DIR__ . "/database/db.php";
 
 //var_dump($productions[3]->seasons);
+//var_dump($productions);
+//var_dump($productions[17]->getDuration());
 ?>
 
 <!doctype html>
@@ -83,21 +85,27 @@ require __DIR__ . "/database/db.php";
                                         </div>
                                         <br>
                                         <div>
-                                            <!-- <span>
-                                                Profit: <?php echo $production->profit ?>
-                                            </span> -->
+                                            <span>
+                                                Profit: <?php echo (isset($production->profit)) ? $production->profit : '';  ?>
+                                                <!-- in those cases below can't use the short syntax of "?" but need to check -->
+                                                <!-- if $property is set: echo (isset($var->property)) ? $var->property : ''; -->
+                                            </span>
                                         </div>
                                         <br>
                                         <div>
-                                            <!-- <span>
-                                                Duration: <?php echo $production->movie?->duration ?>
-                                            </span> -->
+                                            <span>
+                                                Duration: <?php echo (isset($production->duration)) ? $production->duration : '';  ?>
+                                                <!-- in those cases below can't use the short syntax of "?" but need to check -->
+                                                <!-- if $property is set: echo (isset($var->property)) ? $var->property : ''; -->
+                                            </span>
                                         </div>
                                         <br>
                                         <div>
-                                            <!-- <span>
-                                                Seasons: <?php echo $production->tvshow?->season ?>
-                                            </span> -->
+                                            <span>
+                                                Seasons: <?php echo (isset($production->seasons)) ? $production->seasons : '';  ?>
+                                                <!-- in those cases below can't use the short syntax of "?" but need to check -->
+                                                <!-- if $property is set: echo (isset($var->property)) ? $var->property : ''; -->
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="card-footer">
