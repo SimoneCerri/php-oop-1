@@ -97,6 +97,7 @@ header {
 main {
    height: calc(100vh - 200px);
    background-color: grey;
+   overflow-y: scroll;
 
    .card-title {
       background-color: palegoldenrod;

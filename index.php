@@ -4,6 +4,8 @@ require_once __DIR__ . "/Models/Genre.php"; //import class
 require_once __DIR__ . "/Models/Movie.php"; //import class
 require_once __DIR__ . "/Models/TVShow.php"; //import class
 require __DIR__ . "/database/db.php";
+
+//var_dump($productions[3]->seasons);
 ?>
 
 <!doctype html>
@@ -60,24 +62,38 @@ require __DIR__ . "/database/db.php";
                                     <div class="card-body">
                                         <div>
                                             <span>
+                                                Description:
+                                            </span>
+                                            <br>
+                                            <span>
+                                                <?php echo $production->genre?->description ?>
+                                            </span>
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <span>
                                                 Language: <?php echo $production->language ?>
                                             </span>
                                         </div>
+                                        <br>
                                         <div>
                                             <span>
                                                 Vote: <?php echo $production->vote ?> /10
                                             </span>
                                         </div>
+                                        <br>
                                         <div>
                                             <!-- <span>
-                                                Profit: <?php echo $production->movie?->profit ?>
+                                                Profit: <?php echo $production->profit ?>
                                             </span> -->
                                         </div>
+                                        <br>
                                         <div>
                                             <!-- <span>
                                                 Duration: <?php echo $production->movie?->duration ?>
                                             </span> -->
                                         </div>
+                                        <br>
                                         <div>
                                             <!-- <span>
                                                 Seasons: <?php echo $production->tvshow?->season ?>
@@ -90,11 +106,6 @@ require __DIR__ . "/database/db.php";
                                                 Type: <?php echo $production->genre?->name ?>
                                                 <!-- $production->genre?->name -->
                                                 <!-- the "?" is equal to do an if to controll if genre exist -->
-                                            </span>
-                                        </div>
-                                        <div>
-                                            <span>
-                                                <?php echo $production->genre?->description ?>
                                             </span>
                                         </div>
                                     </div>
