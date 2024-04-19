@@ -1,0 +1,113 @@
+/*
+###############
+- Debug
+- Common
+- Utilities
+- MediaQuery
+- Header
+- Main
+- Footer
+###############
+*/
+
+
+/* #region Debug */
+body {
+   background-color: #333;
+   color: white;
+}
+/* #endregion Debug */
+
+
+/* #region Common */
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+ul {
+   list-style: none;
+
+
+}
+
+a {
+   text-decoration: none;
+   color: white;
+}
+/* #endregion Common */
+
+
+/* #region Utilities */
+
+/* #endregion Utilities */
+
+
+/* #region MediaQuery */
+
+/* #region Desktops & Large screens */
+@media screen and (max-width: 1200px) {
+   /* Desktops & Large screens */
+}
+
+/* #endregion Desktops & Large screens */
+
+/* #region Small screens & Laptops */
+@media screen and (max-width: 1024px) {
+   /* Small screens & Laptops */
+}
+
+/* #endregion Small screens & Laptops */
+
+/* #region iPads & Tablets */
+@media screen and (max-width: 768px) {
+   /* iPads & Tablets */
+}
+
+/* #endregion iPads & Tablets */
+
+/* #region Mobile */
+@media screen and (max-width: 480px) {
+   /* Mobile */
+}
+
+/* #endregion Mobile */
+
+/* #endregion MediaQuery */
+
+
+/* #region Header */
+header {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 80px;
+
+   .logo {
+      img {
+         width: 80px;
+      }
+   }
+}
+/* #endregion Header */
+
+
+/* #region Main */
+main {
+   height: calc(100vh - 200px);
+   background-color: grey;
+
+   .card-title {
+      background-color: palegoldenrod;
+      border-bottom: 1px solid #333;
+   }
+}
+/* #endregion Main */
+
+
+/* #region Footer */
+footer {
+   height: 120px;
+}
+/* #endregion Footer */
