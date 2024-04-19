@@ -1,10 +1,7 @@
 <?php
 require_once __DIR__ . "/Models/Production.php"; //import class
 require_once __DIR__ . "/Models/Genre.php"; //import class
-
-$Prod1 = new Production("First prod", "English", 1, new Genre("First name", "First description")); //you can also save the new Genre inside another variable
-$Prod2Genre = new Genre("Second name", "Second description");
-$Prod2 = new Production("Second prod", "English", 2, $Prod2Genre);
+require __DIR__ . "/database/db.php";
 ?>
 
 <!doctype html>
@@ -54,6 +51,26 @@ $Prod2 = new Production("Second prod", "English", 2, $Prod2Genre);
                 <li class="list-group-item"><?php echo $Prod2Genre->name ?></li> <!-- using the new variable instead of Prod2->genre->name -->
                 <li class="list-group-item"><?php echo $Prod2Genre->description ?></li> <!-- using the new variable instead of Prod2->genre->description -->
             </ul>
+
+            <div class="container py-5">
+                <div class="row">
+                    <?php foreach ($productions as $production) : ?>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-title">
+                                    <?php echo $production->title ?>
+                                </div>
+                                <div class="card-footer">
+                                    <?php echo $production->genre?->name ?>
+                                    <!-- $production->genre?->name -->
+                                    <!-- the "?" is equal to do an if to controll if genre exist -->
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
         </div>
 
         <style>
