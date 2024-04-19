@@ -32,38 +32,44 @@ require __DIR__ . "/database/db.php";
 <body class='debug'>
 
     <div id='app'>
-        <div class="container">
-            <ul class="list-group list-group-numbered">
-                <h3>Production 1</h3> <!-- No way to put a class-name here without write directly ? (ex. < ?php echo Production (?) >) -->
-                <li class="list-group-item"><?php echo $Prod1->title ?></li>
-                <li class="list-group-item"><?php echo $Prod1->language ?></li>
-                <li class="list-group-item">Vote: <?php echo $Prod1->vote ?></li>
-                <li class="list-group-item"><?php echo $Prod1->genre->name ?></li>
-                <li class="list-group-item"><?php echo $Prod1->genre->description ?></li>
-            </ul>
-        </div>
-        <div class="container">
-            <ul class="list-group list-group-numbered">
-                <h3>Production 2</h3> <!-- No way to put a class-name here without write directly ? (ex. < ?php echo Production (?) >) -->
-                <li class="list-group-item"><?php echo $Prod2->title ?></li>
-                <li class="list-group-item"><?php echo $Prod2->language ?></li>
-                <li class="list-group-item">Vote: <?php echo $Prod2->vote ?></li>
-                <li class="list-group-item"><?php echo $Prod2Genre->name ?></li> <!-- using the new variable instead of Prod2->genre->name -->
-                <li class="list-group-item"><?php echo $Prod2Genre->description ?></li> <!-- using the new variable instead of Prod2->genre->description -->
-            </ul>
 
+        <div class="container">
             <div class="container py-5">
-                <div class="row">
+                <div class="row g-3">
                     <?php foreach ($productions as $production) : ?>
-                        <div class="col">
-                            <div class="card">
+                        <div class="col-4">
+                            <div class="card text-center h-100">
                                 <div class="card-title">
-                                    <?php echo $production->title ?>
+                                    <strong>
+                                        Title: <?php echo $production->title ?>
+                                    </strong>
+                                    <hr>
+                                </div>
+                                <div class="card-body">
+                                    <div>
+                                        <span>
+                                            Language: <?php echo $production->language ?>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span>
+                                            Vote: <?php echo $production->vote ?> /10
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="card-footer">
-                                    <?php echo $production->genre?->name ?>
-                                    <!-- $production->genre?->name -->
-                                    <!-- the "?" is equal to do an if to controll if genre exist -->
+                                    <div>
+                                        <span>
+                                            Type: <?php echo $production->genre?->name ?>
+                                            <!-- $production->genre?->name -->
+                                            <!-- the "?" is equal to do an if to controll if genre exist -->
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span>
+                                            <?php echo $production->genre?->description ?>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
