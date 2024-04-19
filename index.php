@@ -1,6 +1,10 @@
 <?php
 require_once __DIR__ . "/Models/Production.php"; //import class
 require_once __DIR__ . "/Models/Genre.php"; //import class
+require_once __DIR__ . "/Models/Movie.php"; //import class
+require_once __DIR__ . "/Models/TVShow.php"; //import class
+
+
 require __DIR__ . "/database/db.php";
 ?>
 
